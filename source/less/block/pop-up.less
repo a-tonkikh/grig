@@ -1,0 +1,185 @@
+.pop-up {
+  box-sizing: border-box;
+  background-color: #001001;
+  border-radius: 2px;
+  color: #fff;
+  left: 0;
+  margin: auto;
+  padding: 15px 10px;
+  position: fixed;
+  right: 0;
+  top: -100%;
+  transform: translateY(-50%);
+  width: 500px;
+  transition-duration: 0.3s;
+  z-index: 20;
+}
+
+.pop-up--opened {
+  top: 50%;
+  transition-duration: 0.3s;
+}
+
+.pop-up__close {
+  background: transparent;
+  border: none;
+  height: 20px;
+  float: right;
+  margin: 0 auto;
+  margin-right: 0;
+  position: relative;
+  padding: 0;
+  width: 20px;
+
+  &::after,
+  &::before {
+    background-color: #fff;
+    content: "";
+    height: 4px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+  }
+
+  &::before {
+    box-shadow: none;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover::before, &:hover::after {
+    background-color: #009f2c;
+    outline: none;
+  }
+
+  &:active::before, &:active::after {
+    background-color: #009f2c;
+    outline: none;
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus::before, &:focus::after {
+    background-color: #009f2c;
+    outline: none;
+  }
+}
+
+.pop-up__form {
+  font-size: 18px;
+  margin: 0 auto;
+  width: 460px;
+}
+
+.pop-up__set {
+  border: none;
+  margin: 0 auto;;
+  padding: 0;
+
+  & legend {
+    font-size: 22px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0;
+    text-align: center;
+  }
+
+  & label {
+    font-size: 18px;
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
+  }
+
+  & input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    padding: 0 5px 5px;
+    flex-grow: 1;
+  }
+}
+
+.pop-up__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+
+  & li {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+  }
+}
+
+.pop-up__button {
+  font-size: 18px;
+  line-height: 18px;
+  margin: 0 auto;
+  min-width: 150px;
+}
+
+.thankyou_message h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+@media (max-width: @mobile-width-max) {
+  .pop-up {
+    align-items:center;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    padding: 5px;
+    top: 0;
+    transform: translateY(0) scaleY(0);
+    transform-origin: top;
+    transition-duration: 0.3s;
+    width: 100%;
+    z-index: 20;
+  }
+
+  .pop-up--opened {
+    transform: scaleY(1);
+    transform-origin: top;
+    transition-duration: 0.3s;
+  }
+
+  .pop-up__close {
+    height: 30px;
+    margin: 0 auto;
+    margin-right: 10px;
+    width: 30px;
+
+    &::after,
+    &::before {
+      width: 30px;
+    }
+  }
+
+  .pop-up__form {
+    width: 310px;
+  }
+
+  .pop-up__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}

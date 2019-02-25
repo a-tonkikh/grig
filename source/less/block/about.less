@@ -1,0 +1,73 @@
+.about p {
+  margin-bottom: 0;
+}
+
+.about__container {
+  background: rgba(0, 16, 1, 0.8);
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-bottom: 120px;
+  padding: 270px 20px 0;
+  position: relative;
+  width: 460px;
+
+  &::after {
+    background-image: url("../img/triangle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: -100px;
+    height: 100px;
+    content: "";
+    left: 0;
+    position: absolute;
+    width: 460px;
+  }
+}
+
+.about__video {
+  height: 259px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  & img, & iframe {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.about__description {
+  text-align: center;
+}
+
+.about__button {
+  box-sizing: border-box;
+  font-size: 30px;
+  margin: 0 auto;
+  width: 500px;
+}
+
+@media (max-width: @mobile-width-max) {
+  .about__container {
+    margin-bottom: 100px;
+    padding-top: 190px;
+    width: 300px;
+
+    &::after {
+      background-image: url("../img/triangle-mobile.svg");
+      width: 300px;
+    }
+  }
+
+  .about__button {
+    box-sizing: border-box;
+    font-size: 25px;
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  .about__video {
+    height: 169px;
+  }
+}

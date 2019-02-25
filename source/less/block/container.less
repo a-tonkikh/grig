@@ -1,0 +1,44 @@
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 900px;
+}
+
+@media (max-width: @tablet-width-max) {
+  .container {
+    width: 750px;
+
+    &--goal {
+      padding: 0;
+      width: 100%;
+    }
+
+    &--footer {
+      width: 600px;
+    }
+
+    &--whitepaper {
+      width: 97%;
+    }
+  }
+}
+
+@media (max-width: @mobile-width-max) {
+  .container {
+    width: 300px;
+
+    &--footer {
+      display: block;
+      width: 300px;
+    }
+
+    &--goal {
+      padding: 0;
+      width: 100%;
+    }
+
+    &--whitepaper {
+      width: 96%;
+    }
+  }
+}
